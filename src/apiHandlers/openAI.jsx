@@ -1,5 +1,5 @@
 export const generateOpenAIResponse = async (text, outputLanguage, setAiGeneratedText) => {
-    const apiKey = ""; 
+    const apiKey =  process.env.REACT_APP_OPEN_AI_API_KEY; 
     const url = "https://api.openai.com/v1/chat/completions";
   
     const requestData = {

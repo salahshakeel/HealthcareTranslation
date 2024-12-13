@@ -1,5 +1,5 @@
 export const handleGoogleTTSPlayback = async (ai_generated_text, outputLanguage) => {
-    const apiKey = "";
+    const apiKey =  process.env.REACT_APP_GOOGLE_TTS_API_KEY;
     const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
   
     const requestData = {
