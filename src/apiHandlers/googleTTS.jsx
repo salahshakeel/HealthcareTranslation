@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const handleGoogleTTSPlayback = async (ai_generated_text, outputLanguage) => {
     const apiKey =  process.env.REACT_APP_GOOGLE_TTS_API_KEY;
     const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`;
@@ -39,6 +41,7 @@ export const handleGoogleTTSPlayback = async (ai_generated_text, outputLanguage)
       const audio = new Audio(audioUrl);
       audio.play();
     } catch (error) {
+      toast.error("Google TTS API key is expired.");
       console.error("Error with Google TTS API:", error);
     }
   };

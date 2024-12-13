@@ -10,6 +10,8 @@ import { generateOpenAIResponse } from './apiHandlers/openAI';
 import Footer from './Components/Footer';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [originalText, setOriginalText] = useState('');
   const [translatedText, setTranslatedText] = useState('');
@@ -112,6 +114,7 @@ function App() {
 
   return (
     <div className="App">
+        <ToastContainer />
   <Particles
         id="tsparticles"
         init={particlesInit}
